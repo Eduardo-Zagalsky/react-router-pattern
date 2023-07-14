@@ -1,12 +1,10 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Dog = ({ dogs }) => {
     const { name } = useParams();
     const [dog, setDog] = useState(null);
-    useEffect(() => {
-        setDog(dogs[name])
-    }, [dogs, name]);
+    setDog(dogs[name]);
     return (
         <div>
             <img src={dog.src} alt={dog.name} style={{ height: "500px" }} />
